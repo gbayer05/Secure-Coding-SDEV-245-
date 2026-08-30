@@ -1,0 +1,102 @@
+# RBAC Mini Authentication App
+# Gentry Bayer
+# 8/30/2026
+
+# Stores the currently logged-in user's information.
+# In a real application, this would normally come from a login system.
+CURRENT_USER = {
+    "username": "alice",
+    "role": "admin"
+}
+
+
+# Maps each username to the role they are assigned.
+# This is used to determine what actions each user is allowed to perform.
+USER_ROLES = {
+    "alice": "admin",
+    "bob": "user"
+}
+
+
+def login(username):
+    """Simulate a login by looking up the role for a given username."""
+
+    # Look up the user's role using their username.
+    role = USER_ROLES.get(username)
+
+    # If the username is not found, prevent the user from logging in.
+    if role is None:
+        raise ValueError(f"Unknown user: {username}")
+
+    # Display a message showing that the login was successful.
+    print(f"[LOGIN] {username} logged in as '{role}'")
+
+    # Return the user's username and role as a dictionary.
+    return {"username": username, "role": role}
+
+
+def require_role(required_role):
+    """Decorator that only allows access if the user's role matches."""
+
+    # The decorator is used to protect functions that require
+    # a specific role, such as admin or user.
+    def decorator(func):
+
+        # This wrapper checks the user's role before allowing
+        # the protected function to run.
+        def wrapper(user, *args, **kwargs):
+
+            # Deny access if the user's role does not match
+            # the role required for the action.
+            if user["role"] != required_role:
+                print(f"[DENIED] '{user['username']}' ({user['role']}) "
+                      f"tried to access an '{required_role}'-only action.")
+                return None
+
+            # If the user has the correct role, allow the function to run.
+            return func(user, *args, **kwargs)
+
+        return wrapper
+
+    return decorator
+
+
+# Only users with the admin role can delete other users.
+@require_role("admin")
+def delete_user(user, target_username):
+    """Admin-only action: delete a user from the system."""
+    print(f"[ADMIN ACTION] {user['username']} deleted user '{target_username}'.")
+
+
+# Only users with the user role can access this action.
+@require_role("user")
+def view_profile(user):
+    """User-only action: view your own profile."""
+    print(f"[USER ACTION] {user['username']} viewed their profile.")
+
+
+# This section runs only when the Python file is executed directly.
+if __name__ == "__main__":
+    print("=== RBAC Simulation ===\n")
+
+    # Log in the current user and store their session information.
+    session_user = login(CURRENT_USER["username"])
+
+    print("\n--- Testing protected actions ---")
+
+    # Alice is an admin, so she should be allowed to delete a user.
+    delete_user(session_user, "bob")
+
+    # Alice is not a regular user, so this action should be denied.
+    view_profile(session_user)
+
+    print("\n--- Testing with a different user ---")
+
+    # Log in as Bob to test the permissions for a regular user.
+    other_user = login("bob")
+
+    # Bob is not an admin, so he should be denied access.
+    delete_user(other_user, "alice")
+
+    # Bob has the user role, so he should be allowed to view his profile.
+    view_profile(other_user)
