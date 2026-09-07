@@ -1,0 +1,67 @@
+======================================================================
+SYMMETRIC ENCRYPTION DEMO (Fernet / AES-128)
+======================================================================
+Key (shared secret):
+LfYN06at__0EmxBf_KJgEVAvjfeHgZ2TRM--G9VNhMU=
+
+Input message:
+Hello, this is a secret message!
+
+Ciphertext (base64, Fernet token):
+gAAAAABqn0D1r78-mkqscQ8E5xAhDn6WCf6G2T0JyPdhj1aNVKtc2jU00RURLmfTGSfLUXYyQ3Kk2EfR5qiVVXunXsK2gtOON8XVB8gtlr1r8S8lbBbOZOP9fzHSecE17dhKmljTxglJ
+
+Decrypted output:
+Hello, this is a secret message!
+
+======================================================================
+ASYMMETRIC ENCRYPTION DEMO (RSA-2048 + OAEP)
+======================================================================
+Public key (used to encrypt):
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApXSq7h3yIaBMHUNfyVY6
+83rCnRXpwj07gywG/7r8y9Mhtcb8Lh6mS60p2tkR48dososJfdnXiXW3BJjX4ite
+RI/eKanoT6sHQkyf610VBkAfQGWfTiqzQy3Eouky5umzaDOAYDo26yOUH8RKl2jI
+Fp+OZsiNS5OmmfZ1UA0s6kKup5A12WSPMogQIOAIVXMsdi62bHnmIytIO7eCGjll
+Ddboj3jLUBisCrVxwoAiIVXLzHCmq/ax8q9zZiaHk/++76KR6rvvu3Kh6a6yzhth
+7vzcbBajrP0mnSXldveKArkXw6dPDoUvygB1iRTU58Q0mDNP0AtaI5c7bErwvN2F
+owIDAQAB
+-----END PUBLIC KEY-----
+
+Private key (used to decrypt):
+-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCldKruHfIhoEwd
+Q1/JVjrzesKdFenCPTuDLAb/uvzL0yG1xvwuHqZLrSna2RHjx2iyiwl92deJdbcE
+mNfiK15Ej94pqehPqwdCTJ/rXRUGQB9AZZ9OKrNDLcSi6TLm6bNoM4BgOjbrI5Qf
+xEqXaMgWn45myI1Lk6aZ9nVQDSzqQq6nkDXZZI8yiBAg4AhVcyx2LrZseeYjK0g7
+t4IaOWUN1uiPeMtQGKwKtXHCgCIhVcvMcKar9rHyr3NmJoeT/77vopHqu++7cqHp
+rrLOG2Hu/NxsFqOs/SadJeV294oCuRfDp08OhS/KAHWJFNTnxDSYM0/QC1ojlzts
+SvC83YWjAgMBAAECggEACTJ6CfB6NCpP8NR875kuf7hUNx0vuE9lDn6VCQQg50ee
+OReNjxa/EbfXesXUO8Aq7rnR1kAUvhxgBw5j+buFavRAWjqKolsUdTgDL7cl4woP
+cqnzeAnhmxthMdkarkFRarpqKW8y/FEm+7kSmGYHsVI/PTFqwUe83BQaI1AILiFd
+1+x7PpR71Sa/F47hvZIaeqw7v84VYrs/re1Xz7Tzd+KRVlyXnC9a4dSNxGRWPWj6
+/BrKg2ltHVZq4GCrr7AaRl7u8wF5IZzeoMC5xkgkjrfbOLK3mQf9NjQC+nI1xXpl
+uiQeJkPWdqcQfN9oLgeOAxMzBa9ohSrIWAAo7nkKkQKBgQDd7IAr0AGXz8YLPLBr
+gr5fDTDZ0rA0b493QX7cgQXN+BXseAeDTZSF98C4AjwPD6LT4Vfv2RUUM4uc05AZ
+r9i/rZK15R/qgQvdqYI5kFxO9UkC2j1aipOZLt64gcF0quBtR+CvTb9H/YNwssE9
+2yyRSQLCdsC5DGTCaeb7tsAnuwKBgQC+3H06zQrRCwSen+I472Namg/AWUpHLsAe
+MZgGJfj4ojl8M7Ja27qIyveQk1reUBW+JiP8BvT5ZcmGIDeO0s9e71Zjyo0u9qjO
+HYFBKe+AreumX3feRM3iKj1BKfjcg+UW8fveno03GeQHBSKJYsOgCFdD2ke70t8q
+Lf5rUSq3OQKBgEWR+4hAmA9AamRhbSj2/rkLiJHwk56MjpwjIyL7K5erOyw7YJeP
+/YyV44uL38oU68Wicg/VrN79XboXNKho0Pkd780n+/5m4BJoLlPfZqC2EmJbijpV
+EPpHkDilLMFnRB3eF5i9NcbauZbd4uiCShFtovjVg4s/UGMGEgw8+TY7AoGBAJfJ
+km5pEukc8heU37yX5VPwogY+/KuPqopYtqZtHIvfuAfmtTk89iREBo6cIfAbkK8g
+dg3BGqIdKR/aD1UuomzFutayB4YJ9EW3gUvppeeYaYhu9E14OqRbI0vnrVryKgcN
+e1mYjoX7uTU8CDNqsFldSMlVlybwlTpeSa/fZTFBAoGBAKf82LMY8umYJmqDu2ne
+cDFzLKpPU9G8ZshOBp9tlNXmPK40aQO13aMEBSaH5sZt/Zg/ztFqE3rF7uHfTbhf
+XStJk16VOVP1QM8cd4HXZZ/ED+msNxBJYSlbs390ISLOf64t/5oRRToXTb8/Z47Y
+VyHSbq67DW/OxHtIGtlNH0Uf
+-----END PRIVATE KEY-----
+
+Input message:
+Hello, this is a secret message!
+
+Ciphertext (base64):
+EGqeDaqWcIrCYMS4s48Kk/go8PfGpiR4fAdDV319E+0PjDgfwfWzb0MPnkDyxGI9zrpO6g4qSSuLhh6/tekqSGcbc8ZlM7sPYZnlq5RX5nHONPGI5nko/w3JQsfyXPu4mWmLaBMDGo8FP85LPxzXU4QSSBVNG/oVtVRocGJoFuraFaocEOYHSAy0kTaAr/CQVrAGKhz4VdASWKjFh/raewtwA6HDwOcfIuqQSeBVROZP8qoSBh2ylAVs94AFwT+TwiIQzNrOIvZsW1cHn3TEFQ/+lYAGxexXGVcAXh+Rw3C0NF/Nv5NyInulWc9oxqrW+IQKEX+Asp1BD37C3o79bA==
+
+Decrypted output:
+Hello, this is a secret message!
